@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*::selection{
+    background-color: #2BC5B4;
+    color: white;
+}
+body {
+    font-family: "Inter";
+    background-color: #F6F6F6;
+    overflow: hidden;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.main {
+    height: 100vh;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.navigation {
+    display: flex;
+    padding-left: 0.5rem;
+    border: 1px solid #cbcbcb;
+    padding: 0.6rem;
+}
+
+.left-nav-option {
+    display: flex;
+    align-items: center;
+}
+.nav-options{
+    display: flex;
+    width: 10vw;
+    justify-content: space-around;
+}
+
+.left-nav-option a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #3E3E3E;
+    font-weight: 600;
+}
+
+.left-nav-option .brand img {
+    height: 2rem;
+    margin-right: 0.2rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.search-bar {
+    position: relative;
+    align-self: center;
+    width: 60%;
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 40rem;
+    height: 2.3rem;
+    border-radius: 10rem;
+    border: 1px solid #ECE2E2;
+    outline: none;
+    font-size: 1rem;
+    padding-left: 3rem;
+    text-align: center;
+}
+
+
+.search-bar i {
+    position: absolute;
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.search-bar input::placeholder {
+    padding-left: 1rem;
+    font-size: 0.8rem;
+}
+
+
+/* --------------------- Nav bar height doubt woh badh kyo ni rahi puchna hai */
+
+.content {
+    height: 82vh;
+    width: 100%;
+    display: flex;
+}
+
+.sidebar {
+    background-color: #F6F6F6;
+    min-width: 150px;
+    height: 100%;
+    padding: 1rem 2rem;
+    overflow: auto;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1REM;
+}
+
+h4 {
+    color: #828DA8;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.box a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.737);
+    line-height: 2.4;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.box i {
+    margin-right: 0.4rem;
+    font-size: 1.2rem;
+}
+
+.box a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.play-list-button button {
+    padding: 0.8rem 1rem;
+    border-radius: 20px;
+    border: 1px solid #2BC5B4;
+    color: #2BC5B4;
+    transition: 0.2s;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.play-list-button button i {
+    margin-right: 6px;
+    font-weight: 400;
+}
+
+.play-list-button button:hover {
+    color: #258F83;
+    border: 1px solid #258F83;
+
+}
+
+/* ----------------------------------------------- Main Screen ---------------------------------------------- */
+
+
+.albums{
+    padding: 2rem;
+    overflow: scroll;
+    width: 100%;
+}
+
+.albums h1 {
+    font-size: 1.6em;
+    color: #3E3E3E;
+    font-weight: 600;
+    line-height: 2px;
+}
+.albums h3{
+    color: #3E3E3E;    
+}
+
+.row {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.song img {
+    width: 11rem;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.song {
+    text-align: center;
+    max-width: 12rem;
+    min-height: 10rem;
+    padding: 0.4rem;
+    flex: 1 1 9rem;
+}
+
+.song h6 {
+    text-align: center;  
+    font-weight: 600;
+    margin: 0;
+    margin-top: 10px;
+    color: #4c4c4c;
+}
+
+.song p {
+    text-align: center;
+    font-weight: 500;
+    color: #3E3E3E;
+    margin-top: 0px;
+    font-size: 0.6rem;
+}
+
+
+
+
+/* -----------------------------------------------------------------------   player    ----------------------------------------------------------------------- */
+
+.player {
+    border-top: 2px solid gray;
+    height: 3vh;
+    background-color: pink;
+    position: relative;
+    z-index: 1;
+}
