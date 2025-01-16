@@ -134,21 +134,8 @@ h3 {
     border-radius: 50%;
 }
 
-/* --------------------------------------------  Nav Bar media query      -------------------------------------------------------------------------- */
 
-@media(max-width:1000px) {
-    .brand h1 {
-        display: none;
-    }
 
-    .left-nav-option {
-        justify-content: start;
-    }
-
-    .nav-options {
-        width: 60%;
-    }
-}
 
 /*  --------------------------------------------  Content      -------------------------------------------------------------------------- */
 
@@ -195,7 +182,7 @@ h4 {
 }
 
 .box a:hover {
-    color: rgb(0, 0, 0) ;
+    color: rgb(0, 0, 0);
 }
 
 .play-list-button button {
@@ -228,9 +215,9 @@ h4 {
     width: 79vw;
     width: 100%;
     padding-right: 10vw;
-    overflow: scroll; 
+    overflow: scroll;
     scrollbar-width: none;
-    -ms-overflow-style: none; 
+    -ms-overflow-style: none;
 }
 
 .albums h1 {
@@ -326,4 +313,35 @@ h6 {
     position: absolute;
     width: 100%;
     z-index: 1;
+}
+
+/* --------------------------------------------  media query   -------------------------------------------------------------------------- */
+@media(max-width:1100px) {
+    .brand h1 {
+        display: none;
+    }
+
+    .left-nav-option {
+        justify-content: start;
+    }
+
+    .nav-options {
+        width: 60%;
+    }
+
+    .sidebar {
+        position: absolute;
+        z-index: 1;
+        left: -250px;
+        animation: sidebar-closing 0.6s ;
+    }
+}
+
+@keyframes sidebar-closing{
+    0%{
+        left: 0px;
+    }
+    100%{
+        left: -250px;
+    }
 }
