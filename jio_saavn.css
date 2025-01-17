@@ -158,7 +158,6 @@ h4 {
     color: #828DA8;
     font-size: 0.8rem;
     font-weight: 600;
-    margin-left: 6px;
 }
 
 .box a {
@@ -203,11 +202,13 @@ h4 {
 
 
 .albums {
+    height: 100%;
     position: relative;
     padding: 2rem;
     width: 79vw;
     width: 100%;
     padding-right: 10vw;
+    padding-left: 0.3rem;
     overflow: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -218,20 +219,59 @@ h4 {
     color: #3E3E3E;
     font-weight: 600;
     line-height: 2px;
+    margin-left: 1.5rem;
 }
 
 .albums h3 {
     color: #3E3E3E;
     margin-bottom: 1rem;
+
 }
 
-
-.row {
+.container{
+    width: 98.9%;
     display: flex;
-    margin-bottom: 2rem;
-    width: 100%;
+    position: relative;
+    align-items: center;
+    margin: 0 0rem 1rem 0.3rem;
+}
+
+.row {    
+    display: flex;
+    width: 96%;
     overflow-x: auto;
-    padding: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+.fa-greater-than{
+    position: absolute;
+    right: -0.4rem;
+    top: 29%;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.container:hover > .fa-greater-than{
+    opacity: 1;
+    transform: translateX(0.4rem);
+}
+.fa-less-than{
+    position: absolute;
+    margin-right: 1rem;
+    top: 27%;
+    left: -2px;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.container:hover > .fa-less-than{
+    opacity: 1;
+    transform: translateX(-6px);
 }
 
 .song {
@@ -287,6 +327,8 @@ h6 {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+
 
 /* ---------------------------------------- Queue -------------------------------------------- */
 
@@ -357,6 +399,9 @@ h6 {
         left: -250px;
         animation: sidebar-closing 0.8s;
         height: 100%;
+    }
+    .fa-less-than{
+        left: 0px;
     }
 }
 
