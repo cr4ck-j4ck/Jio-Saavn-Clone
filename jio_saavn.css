@@ -225,24 +225,37 @@ h4 {
     margin-bottom: 1rem;
 }
 
+
 .row {
     display: flex;
     margin-bottom: 2rem;
     width: 100%;
+    overflow-x: auto;
+    padding: 1rem;
 }
 
 .song {
+    flex-basis: calc(100% / 7);       
+    flex-shrink: 0;
     text-align: center;
-    max-width: 14rem;
-    padding: 0.4rem;
-    margin-right: 5px;
+    padding: 0.5rem;
+    box-sizing: border-box; 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
-    flex-shrink: 5;
+    margin-right: 0.1rem;
 }
 
+.row::-webkit-scrollbar {
+    display: none;
+}
+
+
+.row {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 
 
 .song img {
@@ -328,15 +341,15 @@ h6 {
     .brand h1 {
         display: none;
     }
-    
+
     .left-nav-option {
         justify-content: start;
     }
-    
+
     .nav-options {
         width: 60%;
     }
-    
+
     .sidebar {
         background-color: #F6F6F6;
         position: absolute;
