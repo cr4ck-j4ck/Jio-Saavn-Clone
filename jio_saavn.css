@@ -162,7 +162,7 @@ h4 {
     color: #828DA8;
     font-size: 0.8rem;
     font-weight: 600;
-    padding-left: 1rem;
+    margin-left: 2rem;
 }
 
 .box a {
@@ -258,6 +258,8 @@ h4 {
     overflow-x: auto;
     margin-bottom: 1rem;
     padding-left: 1rem;
+    transition: 2s;
+    box-sizing: border-box;
 }
 
 .fa-greater-than{
@@ -283,11 +285,14 @@ h4 {
     cursor: pointer;
     opacity: 0;
     transition: 0.3s;
+    background-color: #F6F6F6;
+    border-radius: 50%;
+    padding: 0.5rem;
 }
 
 .container:hover > .fa-less-than{
     opacity: 1;
-    transform: translateX(-6px);
+    transform: translateX(-9px);
 }
 
 .song {
@@ -303,15 +308,9 @@ h4 {
     margin-right: 0.1rem;
 }
 
-/* .row::-webkit-scrollbar {
+.row::-webkit-scrollbar {
     display: none;
 }
-
-
-.row {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-} */
 
 
 .song img {
