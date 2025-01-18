@@ -151,21 +151,29 @@ h3 {
 .box {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1REM;
+    margin-bottom: 1rem;
+    min-width: 100%;
+    padding-left: 1.5rem;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 h4 {
     color: #828DA8;
     font-size: 0.8rem;
     font-weight: 600;
+    padding-left: 1rem;
 }
 
 .box a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.700);
-    line-height: 2.4;
+    line-height: 1.8rem;
+    margin-bottom: 0.6rem;
     font-weight: 600;
     font-size: 0.9rem;
+    width: 90%;
+    padding-left: 1rem;
 }
 
 .box i {
@@ -176,9 +184,17 @@ h4 {
 .box a:hover {
     color: rgb(0, 0, 0);
 }
-
+.myPlayLists{
+    width: 100%;
+}
+.myPlayLists a:hover{
+    background-color: #2A2D36;
+    border-radius: 6px;
+    color: whitesmoke;
+}
 .play-list-button button {
     padding: 0.8rem 1rem;
+    margin-left: 1.5rem;
     border-radius: 20px;
     border: 1px solid #2BC5B4;
     color: #2BC5B4;
@@ -369,12 +385,12 @@ h6 {
     .sidebar {
         position: relative;
         background-color: #F6F6F6;
-        min-width: 130px;
+        min-width: 180px;
         height: 100%;
-        padding: 1rem 2rem;
+        padding: 1rem 0rem 0 0;
         overflow: auto;
         z-index: 1;
-        animation: sidebar-opening 0.6s;
+        /* animation: sidebar-opening 0.6s; */
         height: 100%;
     }
 }
