@@ -303,7 +303,7 @@ h4 {
     margin-right: 0.1rem;
 }
 
-.row::-webkit-scrollbar {
+/* .row::-webkit-scrollbar {
     display: none;
 }
 
@@ -311,13 +311,14 @@ h4 {
 .row {
     -ms-overflow-style: none;
     scrollbar-width: none;
-}
+} */
 
 
 .song img {
     min-width: 81px;
     max-width: 100%;
     border-radius: 5px;
+    max-height: 208px;
 }
 
 .song h6 {
