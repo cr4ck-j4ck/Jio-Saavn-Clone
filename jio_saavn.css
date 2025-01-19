@@ -278,7 +278,7 @@ h4 {
     position: absolute;
     margin-right: 1rem;
     top: 27%;
-    left: -2px;
+    left: -1.4rem;
     font-size: 0.8rem;
     cursor: pointer;
     opacity: 0;
@@ -287,16 +287,6 @@ h4 {
     border-radius: 50%;
     padding: 1rem;
     z-index: 3;
-}
-
-.container:hover>.fa-greater-than {
-    opacity: 1;
-    transform: translateX(0.4rem);
-}
-
-.container:hover>.fa-less-than {
-    opacity: 1;
-    transform: translateX(-9px);
 }
 
 .song {
