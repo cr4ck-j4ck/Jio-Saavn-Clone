@@ -318,10 +318,9 @@ h4 {
 }
 
 .song:hover>img {
-    filter: brightness(0.4);
+    filter: brightness(0.3);
 }
                                                                             /* hover play */
-
 
 /* Pehle play button ke liye ek actual div banayenge HTML mein */
 .song {
@@ -334,26 +333,21 @@ h4 {
     left: 50%;
     font-size: 1.2rem;
     color: whitesmoke;
-    padding-top: 0.5rem;
-    box-sizing: border-box;
+    padding-top: 0.6rem;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 50%;
     width: 45px;
-    height: 45px;
+    height: 40px;
     display: none;
-    transition: transform 0.2s;  /* smooth transition */
     padding-left: 3px;
+    transition: 0.3s;
+    z-index: 2;
 }
 
 .song:hover .play-button {
     display: block;
-}
-
-.play-button:hover {
-    transform: translate(-50%, -50%) scale(1.2);
-}
-                                                                        /* hover play */
+}                                                                        /* hover play */
 
 
 .song:hover>.play-button {
@@ -424,17 +418,22 @@ h6 {
     .sidebar {
         position: relative;
         background-color: #F6F6F6;
-        min-width: 180px;
+        min-width: 14rem;
         height: 100%;
         padding: 1rem 0rem 0 0;
         overflow: auto;
         z-index: 1;
-        /* animation: sidebar-opening 0.6s; */
+        animation: sidebar-opening 0.6s;
         height: 100%;
     }
 
     .fa-greater-than {
         right: 1%;
+    }
+    .play-button:hover {
+        padding: 1rem 0.8rem;
+        padding-top: 0.9rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -465,11 +464,16 @@ h6 {
     }
     .play-button {
         top: 35%;
-        width: 35px;
+        width: 40px;
         height: 35px;
         font-size: 1rem;
-        padding-top: 5px;
+        padding-top: 0.6rem;
         padding-left: 3px;
+    }
+    .play-button:hover {
+        height: 40px;
+        width: 50px;
+        padding-top: 1rem;
     }
 }
 
