@@ -184,14 +184,17 @@ h4 {
 .box a:hover {
     color: rgb(0, 0, 0);
 }
-.myPlayLists{
+
+.myPlayLists {
     width: 100%;
 }
-.myPlayLists a:hover{
+
+.myPlayLists a:hover {
     background-color: #2A2D36;
     border-radius: 6px;
     color: whitesmoke;
 }
+
 .play-list-button button {
     padding: 0.8rem 1rem;
     margin-left: 1.5rem;
@@ -244,7 +247,7 @@ h4 {
 
 }
 
-.container{
+.container {
     width: 98.9%;
     display: flex;
     position: relative;
@@ -252,19 +255,18 @@ h4 {
     margin: 0 0rem 1rem 0.3rem;
 }
 
-.row {    
+.row {
     display: flex;
     width: 96%;
     overflow-x: auto;
     margin-bottom: 1rem;
     padding-left: 1rem;
-    transition: 2s;
     box-sizing: border-box;
 }
 
-.fa-greater-than{
+.fa-greater-than {
     position: absolute;
-    right: -0.4rem;
+    right: 5px;
     top: 29%;
     font-size: 1rem;
     cursor: pointer;
@@ -272,40 +274,44 @@ h4 {
     opacity: 0;
 }
 
-.container:hover > .fa-greater-than{
-    opacity: 1;
-    transform: translateX(0.4rem);
-}
-.fa-less-than{
+.fa-less-than {
     position: absolute;
     margin-right: 1rem;
     top: 27%;
     left: -2px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     cursor: pointer;
     opacity: 0;
     transition: 0.3s;
     background-color: #F6F6F6;
     border-radius: 50%;
-    padding: 0.5rem;
+    padding: 1rem;
+    z-index: 3;
 }
 
-.container:hover > .fa-less-than{
+.container:hover>.fa-greater-than {
+    opacity: 1;
+    transform: translateX(0.4rem);
+}
+
+.container:hover>.fa-less-than {
     opacity: 1;
     transform: translateX(-9px);
 }
 
 .song {
-    flex-basis: calc(100% / 7);       
+    width: calc(100% / 7);
     flex-shrink: 0;
     text-align: center;
     padding: 0.5rem;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
     margin-right: 0.1rem;
+    position: relative;
+    height: 100%;
 }
 
 .row::-webkit-scrollbar {
@@ -318,6 +324,50 @@ h4 {
     max-width: 100%;
     border-radius: 5px;
     max-height: 208px;
+    transition: 0.5s;
+}
+
+.song:hover>img {
+    filter: brightness(0.4);
+}
+                                                                            /* hover play */
+
+
+/* Pehle play button ke liye ek actual div banayenge HTML mein */
+.song {
+    position: relative;
+}
+
+.play-button {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    font-size: 1.2rem;
+    color: whitesmoke;
+    padding-top: 0.5rem;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: none;
+    transition: transform 0.2s;  /* smooth transition */
+    padding-left: 3px;
+}
+
+.song:hover .play-button {
+    display: block;
+}
+
+.play-button:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+                                                                        /* hover play */
+
+
+.song:hover>.play-button {
+    display: block;
 }
 
 .song h6 {
@@ -343,7 +393,6 @@ h6 {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 
 
 /* ---------------------------------------- Queue -------------------------------------------- */
@@ -393,6 +442,10 @@ h6 {
         /* animation: sidebar-opening 0.6s; */
         height: 100%;
     }
+
+    .fa-greater-than {
+        right: 1%;
+    }
 }
 
 @media(max-width:1100px) {
@@ -416,8 +469,17 @@ h6 {
         animation: sidebar-closing 0.8s;
         height: 100%;
     }
-    .fa-less-than{
+
+    .fa-less-than {
         left: 0px;
+    }
+    .play-button {
+        top: 35%;
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+        padding-top: 5px;
+        padding-left: 3px;
     }
 }
 
