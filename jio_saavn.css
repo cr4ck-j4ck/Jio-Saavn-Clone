@@ -128,7 +128,7 @@ h3 {
 }
 
 .account img {
-    margin-left: 0.5rem;
+    margin:0 1rem 0 0.7rem;
     height: 3.2rem;
     width: 3.32em;
     border-radius: 50%;
@@ -221,7 +221,7 @@ h4 {
 
 
 .albums {
-    height: 100%;
+    height: 101%;
     position: relative;
     padding: 2rem;
     width: 79vw;
@@ -248,7 +248,7 @@ h4 {
 }
 
 .container {
-    width: 98.9%;
+    width: 103%;
     display: flex;
     position: relative;
     align-items: center;
@@ -293,7 +293,7 @@ h4 {
     width: calc(100% / 7);
     flex-shrink: 0;
     text-align: center;
-    padding: 0.5rem;
+    padding: 0.7rem;
     box-sizing: border-box;
     white-space: nowrap;
     overflow: hidden;
@@ -308,21 +308,24 @@ h4 {
     display: none;
 }
 
+.row {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 
 .song img {
     min-width: 81px;
     max-width: 100%;
     border-radius: 5px;
-    max-height: 208px;
+    max-height: 258px;
     transition: 0.5s;
 }
+
 
 .song:hover>img {
     filter: brightness(0.3);
 }
-                                                                            /* hover play */
 
-/* Pehle play button ke liye ek actual div banayenge HTML mein */
 .song {
     position: relative;
 }
@@ -402,14 +405,50 @@ h6 {
 /* -----------------------------------------------------------------------   player    ----------------------------------------------------------------------- */
 
 .player {
-    position: relative;
     bottom: 0px;
-    border-top: 2px solid gray;
-    height: 8vh;
-    background-color: pink;
+    height: 9vh;
     position: absolute;
+    background-color: #F6F6F6;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
+    display: flex;
+}
+/* ------------------------------------------------------------------------------ Current Song -------------------------------------------------------------------- */
+.curr-song{
+    width: 25%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0.8rem 0 0 0.5rem ;
+    padding-left: 1rem;
+    display: flex;
+}
+
+.curr-song img{
+    height: 68px;
+    border-radius: 10px;
+}
+
+.song-details{
+    margin-left: 1rem;
+    padding-top: 0.7rem;
+}
+.song-details p {
+    margin-top: 6px;
+}
+/* ------------------------------------------------------------------------------ Pause Play button -------------------------------------------------------------------- */
+
+.playback{
+    width: 60%;
+    height: 100%;
+    background-color: red;
+}
+
+/* ---------------------------------------------------------------------------------- Options -------------------------------------------------------------------- */
+
+.options{
+    width: 25%;
+    background-color: hotpink;
+    height: 100%;
 }
 
 /* --------------------------------------------  media query   -------------------------------------------------------------------------- */
@@ -423,7 +462,7 @@ h6 {
         padding: 1rem 0rem 0 0;
         overflow: auto;
         z-index: 1;
-        animation: sidebar-opening 0.6s;
+        /* animation: sidebar-opening 0.6s; */
         height: 100%;
     }
 
@@ -431,9 +470,11 @@ h6 {
         right: 1%;
     }
     .play-button:hover {
-        padding: 1rem 0.8rem;
-        padding-top: 0.9rem;
-        font-size: 1.6rem;
+        height: 50px;
+        width: 60px;
+        padding-top: 0.7rem;
+        
+        font-size: 1.5rem;
     }
 }
 
@@ -463,7 +504,7 @@ h6 {
         left: 0px;
     }
     .play-button {
-        top: 35%;
+        top: 40%;
         width: 40px;
         height: 35px;
         font-size: 1rem;
@@ -471,9 +512,12 @@ h6 {
         padding-left: 3px;
     }
     .play-button:hover {
-        height: 40px;
-        width: 50px;
+        height: 45px;
+        width: 55px;
         padding-top: 1rem;
+    }
+    .fa-greater-than {
+        right: 1.2%;
     }
 }
 
