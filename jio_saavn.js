@@ -111,12 +111,10 @@ playPauseButton.addEventListener("click", function () {
 audio.addEventListener("timeupdate", function () {
     rangeInput.value = audio.currentTime;
     const songPercent = parseInt((audio.currentTime / audio.duration) * 100);
-    // rangeInput.style.background = `linear-gradient(to right, #2BC5B4 ${songPercent}%, rgb(209, 209, 209) ${100 - songPercent}%`;
-    console.log(`linear-gradient(to right, #2BC5B4 0 ${songPercent}%, rgb(209, 209, 209) ${100-songPercent} 100%)`);
-    rangeInput.style.background = `linear-gradient(to right, #2BC5B4 0 ${songPercent}%, rgb(209, 209, 209) ${100-songPercent} 100%)`;
-    console.dir(rangeInput.style);
+
+    rangeInput.style.background = `linear-gradient(to right, #2BC5B4 0%, #2BC5B4 ${songPercent}%, #ddd ${songPercent}%,#ddd 100%)`;
+
     if (audio.currentTime === audio.duration) {
-        console.log("ho gaya song pura");
         rangeInput.value = 0;
         playPauseButton.innerHTML = `<i class="fa-solid fa-play"></i>`;
     }
