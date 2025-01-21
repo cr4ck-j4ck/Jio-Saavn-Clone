@@ -6,17 +6,18 @@ const playButtons = document.querySelectorAll(".play-button");
 const currentSongImage = document.querySelector("#currentImage");
 const songDetails = document.querySelector(".song-details");
 const audio = document.querySelector("audio");
+const playPauseButton = document.querySelector(".play-pause-button");
+const rangeInput = document.querySelector('input[type="range"]');
 
 async function getSongData() {
     const data = await fetch('./songsData.json')
     return await data.json();
 }
 
-document.querySelector(".content").addEventListener("keydown", function () {
-    console.log("clicked");
-});
+
 
 async function playSong(src) {
+    rangeInput.value = 0;
     const songData = await getSongData();
     const songObj = songData.find(el => {
         return el.songImage === src;
@@ -26,15 +27,16 @@ async function playSong(src) {
     const song = await data.blob();
     const url = URL.createObjectURL(song);
     audio.src = url;
-    audio.play();
+    await audio.play();
     currentSongImage.src = songObj.songImage;
-    songDetails.querySelector("h3").innerText = songObj.songName
-    songDetails.querySelector("p").innerText = songObj.songDetail
+    songDetails.querySelector("h3").innerText = songObj.songName;
+    songDetails.querySelector("p").innerText = songObj.songDetail;
+    playPauseButton.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+    rangeInput.max = audio.duration;
 }
 
 for (let button of playButtons) {
     button.addEventListener("click", async function () {
-        console.log(this.parentElement.firstElementChild.src);
         await playSong(this.parentElement.firstElementChild.src);
     });
 }
@@ -79,22 +81,49 @@ containers.forEach(container => {
     });
 })
 
+function playAndPause() {
+    if (audio.paused === false) {
+        audio.pause();
+        playPauseButton.innerHTML = `<i class="fa-solid fa-play"></i>`;
+    } else {
+        if (audio.src.slice(0, 4) === "blob") {
+            playPauseButton.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+            audio.play();
+        }
+    }
+}
 
 document.addEventListener("keydown", function (event) {
     if (event.keyCode === 32) {
-        if (event.target.tagName !== "INPUT") {
-            if (audio.paused === false) {
-                audio.pause();
-            } else {
-                console.log(audio.src);
-                if (audio.src === "" ) {
-                    console.log("inside");
-                    audio.play();
-                }
-            }
+        if (event.target.type !== "text") {
+            playAndPause();
         }
         if (event.target.tagName === "BODY") {
             event.preventDefault();
         }
     }
 });
+
+playPauseButton.addEventListener("click", function () {
+    playAndPause();
+});
+
+audio.addEventListener("timeupdate", function () {
+    rangeInput.value = audio.currentTime;
+    const songPercent = parseInt((audio.currentTime / audio.duration) * 100);
+    // rangeInput.style.background = `linear-gradient(to right, #2BC5B4 ${songPercent}%, rgb(209, 209, 209) ${100 - songPercent}%`;
+    console.log(`linear-gradient(to right, #2BC5B4 0 ${songPercent}%, rgb(209, 209, 209) ${100-songPercent} 100%)`);
+    rangeInput.style.background = `linear-gradient(to right, #2BC5B4 0 ${songPercent}%, rgb(209, 209, 209) ${100-songPercent} 100%)`;
+    console.dir(rangeInput.style);
+    if (audio.currentTime === audio.duration) {
+        console.log("ho gaya song pura");
+        rangeInput.value = 0;
+        playPauseButton.innerHTML = `<i class="fa-solid fa-play"></i>`;
+    }
+});
+
+
+rangeInput.addEventListener("input", function (e) {
+    audio.currentTime = rangeInput.value;
+});
+

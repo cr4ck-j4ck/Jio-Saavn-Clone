@@ -24,6 +24,7 @@ h1 {
     font-weight: 800;
     font-size: 1.2rem;
     margin-left: 5px;
+    font-family: "Playfair Display", serif;
 }
 
 .navigation {
@@ -419,15 +420,20 @@ h6 {
     background-color: #F6F6F6;
     width: 100%;
     z-index: 2;
+    background-color: pink;
 }
 
-.player input[type="range"]{
+.player input[type="range"] {
+    position: absolute;
+    top: -6px;
     appearance: none;
-    -webkit-appearance: none;
+    left: -1px;
     width: 100%;
-    background-color: red;
-    height: 0.5rem;
+    height: 1.25rem;
+    outline: none;
+    background-color: rgb(169, 169, 169);
 }
+
 
 /* ------------------------------------------------------------------------------ Current Song -------------------------------------------------------------------- */
 
@@ -439,15 +445,17 @@ h6 {
 
 .curr-song {
     width: 35%;
-    height: 100%;
+    height: 125%;
     box-sizing: border-box;
     padding: 0.5rem 0 0 0.5rem;
+    background-color: green;
     padding-left: 1rem;
     display: flex;
+    align-items: center;
 }
 
 .curr-song img {
-    height: 90%;
+    height: 80%;
     border-radius: 10px;
 }
 
@@ -485,20 +493,42 @@ h6 {
 /* ------------------------------------------------------------------------------ Pause Play button -------------------------------------------------------------------- */
 
 .playback {
-    width: 40%;
+    width: 30%;
     height: 100%;
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .playback audio {
     border: 2px solid;
 }
 
+.player-buttons {
+    width: 200px;
+    height: 120%;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.play-pause-button {
+    cursor: pointer;
+}
+
+.play-pause-button:hover {
+    color: #676767;
+}
+
+
 /* ---------------------------------------------------------------------------------- Options -------------------------------------------------------------------- */
 
 .options {
-    width: 25%;
-    height: 100%;
+    width: 35%;
+    height: 122%;
+    background-color: green;
 }
 
 /* --------------------------------------------  media query   -------------------------------------------------------------------------- */
