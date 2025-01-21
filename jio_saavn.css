@@ -360,9 +360,6 @@ h4 {
     display: block;
 }
 
-/* hover play */
-
-
 .song:hover>.play-button {
     display: block;
 }
@@ -378,9 +375,11 @@ h4 {
 
 .song p {
     font-weight: 500;
-    color: #5b5b5b;
+    color: #7f7f7f;
     margin-top: 0px;
     font-size: 0.8rem;
+    font-weight: 500;
+    font-family: "Sour Gummy", serif;
 }
 
 .song p,
@@ -420,44 +419,35 @@ h6 {
     background-color: #F6F6F6;
     width: 100%;
     z-index: 2;
-    background-color: pink;
 }
 
 .player input[type="range"] {
     position: absolute;
-    top: -6px;
+    top: -7px;
     appearance: none;
     left: -1px;
     width: 100%;
-    height: 1.25rem;
+    height: 0.3rem;
     outline: none;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 15px;
-    height: 15px;
-    background: #ddd;
-    border-radius: 50%;
     cursor: pointer;
 }
 
-input[type="range"] {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 1-px;
-    background: #ddd;
-    border-radius: 5px;
-    outline: none;
-}
 
 input[type="range"]::-webkit-slider-thumb {
+    outline: none;
+    position: relative;
+    left: -8px;
     -webkit-appearance: none;
     width: 15px;
     height: 15px;
     background: #2BC5B4;
     border-radius: 50%;
     cursor: pointer;
+    display: none;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb{
+    display: block;
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -477,8 +467,6 @@ input[type="range"]::-ms-thumb {
     cursor: pointer;
 }
 
-
-
 /* ------------------------------------------------------------------------------ Current Song -------------------------------------------------------------------- */
 
 .controls-container {
@@ -491,8 +479,7 @@ input[type="range"]::-ms-thumb {
     width: 35%;
     height: 125%;
     box-sizing: border-box;
-    padding: 0.5rem 0 0 0.5rem;
-    background-color: green;
+    padding: 0.1rem 0;
     padding-left: 1rem;
     display: flex;
     align-items: center;
@@ -509,7 +496,7 @@ input[type="range"]::-ms-thumb {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    margin-top: 0rem;
+    margin-top: 0.2rem;
     font-family: "Sour Gummy", serif;
     color: #7f7f7f;
 }
@@ -537,7 +524,7 @@ input[type="range"]::-ms-thumb {
 /* ------------------------------------------------------------------------------ Pause Play button -------------------------------------------------------------------- */
 
 .playback {
-    width: 30%;
+    width: 28%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -549,13 +536,13 @@ input[type="range"]::-ms-thumb {
 }
 
 .player-buttons {
-    width: 200px;
+    width: 230px;
     height: 120%;
     display: flex;
     margin-top: 1rem;
     justify-content: space-around;
     align-items: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .play-pause-button {
@@ -565,14 +552,33 @@ input[type="range"]::-ms-thumb {
 .play-pause-button:hover {
     color: #676767;
 }
-
+.fa-backward-step , .fa-forward-step{
+    color: #8a8a8a;
+}
 
 /* ---------------------------------------------------------------------------------- Options -------------------------------------------------------------------- */
 
 .options {
     width: 35%;
     height: 122%;
-    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.control-system{
+    width:30%;
+    height: 40%;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.duration p{
+    font-family: 'Noto Sans', Courier, monospace;;
+    font-size: 1rem;
+    color: #676767;
 }
 
 /* --------------------------------------------  media query   -------------------------------------------------------------------------- */
