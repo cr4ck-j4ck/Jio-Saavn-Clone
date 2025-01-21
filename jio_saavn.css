@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 
 *::selection {
     background-color: #2BC5B4;
@@ -65,6 +64,7 @@ h1 {
     font-size: 0.9rem;
     font-weight: 500;
     margin: 0px 6px;
+    font-family: 'Noto Sans', Courier, monospace;
 }
 
 .brand {
@@ -128,7 +128,7 @@ h3 {
 }
 
 .account img {
-    margin:0 1rem 0 0.7rem;
+    margin: 0 1rem 0 0.7rem;
     height: 3.2rem;
     width: 3.32em;
     border-radius: 50%;
@@ -174,6 +174,7 @@ h4 {
     font-size: 0.9rem;
     width: 90%;
     padding-left: 1rem;
+    font-family: 'Noto Sans', Courier, monospace;
 }
 
 .box i {
@@ -231,7 +232,7 @@ h4 {
     overflow: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .albums h1 {
@@ -245,7 +246,7 @@ h4 {
 .albums h3 {
     color: #3E3E3E;
     margin-bottom: 1rem;
-
+    margin-left: 1.5rem;
 }
 
 .container {
@@ -267,7 +268,7 @@ h4 {
 
 .fa-greater-than {
     position: absolute;
-    right: 5px;
+    right: 1rem;
     top: 34%;
     font-size: 1rem;
     cursor: pointer;
@@ -279,7 +280,7 @@ h4 {
     position: absolute;
     margin-right: 1rem;
     top: 27%;
-    left: -1.4rem;
+    left: -1rem;
     font-size: 0.8rem;
     cursor: pointer;
     opacity: 0;
@@ -287,14 +288,14 @@ h4 {
     background-color: #F6F6F6;
     border-radius: 50%;
     padding: 1rem;
-    background-color: red;
-    z-index: 100;
+    z-index: 1;
 }
- 
-.container:hover .fa-greater-than{
-    transform: translateX(-10px);
+
+.container:hover .fa-greater-than {
+    transform: translateX(10px);
 }
-.container:hover .fa-less-than{
+
+.container:hover .fa-less-than {
     transform: translateX(-10px);
 }
 
@@ -356,7 +357,9 @@ h4 {
 
 .song:hover .play-button {
     display: block;
-}                                                                        /* hover play */
+}
+
+/* hover play */
 
 
 .song:hover>.play-button {
@@ -367,16 +370,16 @@ h4 {
     font-weight: 600;
     margin: 0;
     margin-top: 10px;
-    color: #4c4c4c;
-    font-size: 0.8rem;
+    color: #1c1c1c;
+    font-size: 0.9rem;
+    font-family: 'Noto Sans', Courier, monospace;
 }
 
 .song p {
-
     font-weight: 500;
-    color: #3E3E3E;
+    color: #5b5b5b;
     margin-top: 0px;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 
 .song p,
@@ -407,65 +410,93 @@ h6 {
 }
 
 
-
 /* -----------------------------------------------------------------------   player    ----------------------------------------------------------------------- */
 
 .player {
     bottom: 0px;
-    height: 9vh;
+    height: 5.5rem;
     position: absolute;
     background-color: #F6F6F6;
     width: 100%;
     z-index: 2;
-    display: flex;
 }
+
+.player input[type="range"]{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    background-color: red;
+    height: 0.5rem;
+}
+
 /* ------------------------------------------------------------------------------ Current Song -------------------------------------------------------------------- */
-.curr-song{
+
+.controls-container {
+    display: flex;
+    bottom: 0px;
+    height: 4.5rem;
+}
+
+.curr-song {
     width: 35%;
     height: 100%;
     box-sizing: border-box;
-    padding: 0.8rem 0 0 0.5rem ;
+    padding: 0.5rem 0 0 0.5rem;
     padding-left: 1rem;
     display: flex;
-    background-color: rgb(134, 252, 226);
 }
 
-.curr-song img{
+.curr-song img {
     height: 90%;
     border-radius: 10px;
 }
 
-.song-details{
-    height: 90%;
-    box-sizing: border-box;
-    margin-left: 1rem;
-    padding-top: 0.7rem;
-    width: 80%;
-    background-color: hotpink;
-}
-
 .song-details p {
-    width: 100%;
-    background-color: blanchedalmond;
-    margin-top: 6px;
-    font-size: 0.8rem;
+    width: 92%;
+    font-size: 0.9rem;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    margin-top: 0rem;
+    font-family: "Sour Gummy", serif;
+    color: #7f7f7f;
 }
 
+.song-details {
+    height: 100%;
+    box-sizing: border-box;
+    margin-left: 1rem;
+    padding-top: 0.5rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.song-details h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-family: "Playfair Display", serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 /* ------------------------------------------------------------------------------ Pause Play button -------------------------------------------------------------------- */
 
-.playback{
+.playback {
     width: 40%;
     height: 100%;
     background-color: red;
 }
 
+.playback audio {
+    border: 2px solid;
+}
+
 /* ---------------------------------------------------------------------------------- Options -------------------------------------------------------------------- */
 
-.options{
+.options {
     width: 25%;
     height: 100%;
 }
@@ -480,7 +511,7 @@ h6 {
         height: 100%;
         padding: 1rem 0rem 0 0;
         overflow: auto;
-        z-index: -10;
+        z-index: 2;
         animation: sidebar-opening 0.6s;
         height: 100%;
     }
@@ -488,11 +519,12 @@ h6 {
     .fa-greater-than {
         right: 1%;
     }
+
     .play-button:hover {
         height: 50px;
         width: 60px;
         padding-top: 0.7rem;
-        
+
         font-size: 1.5rem;
     }
 }
@@ -510,6 +542,10 @@ h6 {
         width: 60%;
     }
 
+    .queue {
+        right: -25rem;
+    }
+
     .sidebar {
         background-color: #F6F6F6;
         position: absolute;
@@ -522,6 +558,7 @@ h6 {
     .fa-less-than {
         left: 0px;
     }
+
     .play-button {
         top: 40%;
         width: 40px;
@@ -530,13 +567,19 @@ h6 {
         padding-top: 0.6rem;
         padding-left: 3px;
     }
+
     .play-button:hover {
         height: 45px;
         width: 55px;
         padding-top: 1rem;
     }
+
     .fa-greater-than {
-        right: 1.2%;
+        right: 2%;
+    }
+
+    .song-details p {
+        width: 85%;
     }
 }
 

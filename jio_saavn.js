@@ -5,30 +5,30 @@ const containers = document.querySelectorAll(".scrollable");
 const playButtons = document.querySelectorAll(".play-button");
 const currentSongImage = document.querySelector("#currentImage");
 const songDetails = document.querySelector(".song-details");
+const audio = document.querySelector("audio");
 
 async function getSongData() {
     const data = await fetch('./songsData.json')
     return await data.json();
 }
 
-document.querySelector(".content").addEventListener("keydown",function(){
+document.querySelector(".content").addEventListener("keydown", function () {
     console.log("clicked");
 });
 
 async function playSong(src) {
     const songData = await getSongData();
-    const songObj = songData.find(el =>{
+    const songObj = songData.find(el => {
         return el.songImage === src;
     });
 
     const data = await fetch(songObj.songURL);
     const song = await data.blob();
     const url = URL.createObjectURL(song);
-    const audio = document.querySelector("audio");
     audio.src = url;
     audio.play();
     currentSongImage.src = songObj.songImage;
-    songDetails.querySelector("h3").innerText = songObj.songName    
+    songDetails.querySelector("h3").innerText = songObj.songName
     songDetails.querySelector("p").innerText = songObj.songDetail
 }
 
@@ -78,3 +78,23 @@ containers.forEach(container => {
         rightButton.style.opacity = 0;
     });
 })
+
+
+document.addEventListener("keydown", function (event) {
+    if (event.keyCode === 32) {
+        if (event.target.tagName !== "INPUT") {
+            if (audio.paused === false) {
+                audio.pause();
+            } else {
+                console.log(audio.src);
+                if (audio.src === "" ) {
+                    console.log("inside");
+                    audio.play();
+                }
+            }
+        }
+        if (event.target.tagName === "BODY") {
+            event.preventDefault();
+        }
+    }
+});
