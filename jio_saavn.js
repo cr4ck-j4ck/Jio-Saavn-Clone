@@ -8,7 +8,7 @@ const songDetails = document.querySelector(".song-details");
 const audio = document.querySelector("audio");
 const playPauseButton = document.querySelector(".play-pause-button");
 const rangeInput = document.querySelector('input[type="range"]');
-const printDuration = document.querySelector(".duration p");
+const showDuration = document.querySelector(".duration p");
 let audioTimeInMinAndSecond = audio.duration;
 
 async function getSongData() {
@@ -34,8 +34,7 @@ async function playSong(src) {
     playPauseButton.innerHTML = `<i class="fa-solid fa-pause"></i>`;
     rangeInput.max = audio.duration;
     audioTimeInMinAndSecond = `${parseInt(audio.duration / 60)}:${parseInt(audio.duration % 60).toString().length == 1 ? "0"+parseInt(audio.duration % 60) : parseInt(audio.duration % 60)}`;
-    console.log("audioTimeInMinAndSeconds",audioTimeInMinAndSecond);
-    printDuration.innerText = `0:00 / ${audioTimeInMinAndSecond}`;
+    showDuration.innerText = `0:00 / ${audioTimeInMinAndSecond}`;
 }
 
 for (let button of playButtons) {
@@ -113,7 +112,7 @@ playPauseButton.addEventListener("click", function () {
 
 audio.addEventListener("timeupdate", function () {
     rangeInput.value = audio.currentTime;
-    printDuration.innerText = `${parseInt(audio.currentTime / 60)}:${parseInt(audio.currentTime % 60).toString().length == 1 ? "0"+parseInt(audio.currentTime % 60) : parseInt(audio.currentTime % 60)} / ${audioTimeInMinAndSecond}`;
+    showDuration.innerText = `${parseInt(audio.currentTime / 60)}:${parseInt(audio.currentTime % 60).toString().length == 1 ? "0"+parseInt(audio.currentTime % 60) : parseInt(audio.currentTime % 60)} / ${audioTimeInMinAndSecond}`;
     const songPercent = parseInt((audio.currentTime / audio.duration) * 100);
 
     rangeInput.style.background = `linear-gradient(to right, #2BC5B4 0%, #2BC5B4 ${songPercent}%, #ddd ${songPercent}%,#ddd 100%)`;

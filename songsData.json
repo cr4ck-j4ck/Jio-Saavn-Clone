@@ -508,5 +508,47 @@
     "songDetail": "Abhijeet, Alka Yagnik, Surendra Mishra",
     "songImage": "https://c.saavncdn.com/550/Pyaar-Zindagi-Hai-Hindi-2011-20241125123427-500x500.jpg",
     "songURL": "https://aac.saavncdn.com/550/3abd97560a982ebc13b0ab52887fc325_160.mp4"
+  },
+  {
+    "songName": "Thodi Der",
+    "songDetail": "Farhan Saeed, Shreya Ghoshal",
+    "songImage": "https://i.pinimg.com/736x/b4/00/78/b400784933f5c026fd9213490d8c93d7.jpg",
+    "songURL": "https://aac.saavncdn.com/441/ccf15885f74c63276a92302dbbb33e75_160.mp4"
+  },
+  {
+    "songName": "Chahun Main Ya Naa",
+    "songDetail": "Arijit Singh, Palak Muchhal",
+    "songImage": "https://i.pinimg.com/736x/ab/68/54/ab685499e8212841209e03e76c1305c5.jpg",
+    "songURL": "https://aac.saavncdn.com/430/5195eaf2bfed9fbadd7f5e6bf0d66427_160.mp4"
+  },
+  {
+    "songName": "Kaun Tujhe",
+    "songDetail": "Palak Muchhal",
+    "songImage": "https://i.pinimg.com/736x/63/aa/aa/63aaaa2a282ee6c6b99800e7c50f7844.jpg",
+    "songURL": "https://aac.saavncdn.com/569/6a016eb165b341281a97bc570f70c1d4_160.mp4"
+  },
+  {
+    "songName": "Humsafar",
+    "songDetail": "Akhil Sachdeva, Mansheel Gujral",
+    "songImage": "https://c.saavncdn.com/804/Badrinath-Ki-Dulhania-Full-Hindi-2017-500x500.jpg",
+    "songURL": "https://aac.saavncdn.com/804/671a613f55f54fbef197749fef0149a8_160.mp4"
+  },
+  {
+    "songName": "Dil Bechara",
+    "songDetail": "A.R. Rahman",
+    "songImage": "https://c.saavncdn.com/870/Dil-Bechara-Hindi-2020-20200709070438-500x500.jpg",
+    "songURL": "https://aac.saavncdn.com/870/57f9901b8cc521205e1fa043a29104ff_160.mp4"
+  },
+  {
+    "songName": "Taare Ginn",
+    "songDetail": "A.R. Rahman, Mohit Chauhan, Shreya Ghoshal",
+    "songImage": "https://i.pinimg.com/736x/d2/e3/8e/d2e38eaed65640814b726af7e59d3bac.jpg",
+    "songURL": "https://aac.saavncdn.com/870/ec5183010778d5db1164eabc32d9f0ed_160.mp4"
+  },
+  {
+    "songName": "Soni Soni",
+    "songDetail": "Gurpreet Saini, Darshan Raval, Jonita Gandhi, Rochak Kohli",
+    "songImage": "https://c.saavncdn.com/306/Soni-Soni-From-Ishq-Vishk-Rebound-Hindi-2024-20240619164934-500x500.jpg",
+    "songURL": "https://aac.saavncdn.com/306/4e3a4f958e069cd31637fd3274959988_160.mp4"
   }
 ]
