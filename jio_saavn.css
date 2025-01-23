@@ -81,30 +81,30 @@ h1 {
 /* --------------------------------------------------  Search Bar Input   -------------------------------------------------------- */
 
 .search-bar {
-    display: flex;
     width: 43%;
     position: relative;
-    align-items: center;
 }
 
 .search-bar input {
     width: 100%;
     height: 2.4rem;
     border-radius: 30px;
-    text-align: center;
     border: none;
     outline: none;
 }
 
 .search-bar i {
-    position: relative;
-    left: 39%;
+    position: absolute;
+    left: 49%;
+    top: 34%;
     color: #888;
     font-size: 0.9rem;
 }
 
-.search-bar input::placeholder {
-    font-size: 0.9rem;
+.search-bar input::placeholder{
+    position: absolute;
+    left: 52%;
+    font-size: 1rem; 
 }
 
 
@@ -514,6 +514,7 @@ input[type="range"]::-ms-thumb {
 
 .song-details h3 {
     margin: 0;
+    width: 90%;
     font-size: 1rem;
     font-family: "Playfair Display", serif;
     white-space: nowrap;
@@ -559,9 +560,11 @@ input[type="range"]::-ms-thumb {
 /* ---------------------------------------------------------------------------------- Options -------------------------------------------------------------------- */
 
 .options {
-    width: 35%;
+    width: 15%;
     height: 122%;
     display: flex;
+    position: absolute;
+    right: 3rem;
     align-items: center;
     justify-content: flex-end;
 }
@@ -660,6 +663,13 @@ input[type="range"]::-ms-thumb {
 
     .song-details p {
         width: 85%;
+    }
+    .search-bar i {
+        position: absolute;
+        left: 48%;
+        top: 34%;
+        color: #888;
+        font-size: 0.9rem;
     }
 }
 

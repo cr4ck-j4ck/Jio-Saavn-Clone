@@ -116,9 +116,10 @@ audio.addEventListener("timeupdate", function () {
     const songPercent = parseInt((audio.currentTime / audio.duration) * 100);
 
     rangeInput.style.background = `linear-gradient(to right, #2BC5B4 0%, #2BC5B4 ${songPercent}%, #ddd ${songPercent}%,#ddd 100%)`;
-
+    
     if (audio.currentTime === audio.duration) {
         rangeInput.value = 0;
+        rangeInput.style.background = `linear-gradient(to right, #2BC5B4 0%, #2BC5B4 0%, #ddd 0%,#ddd 100%)`;
         playPauseButton.innerHTML = `<i class="fa-solid fa-play"></i>`;
     }
 });
