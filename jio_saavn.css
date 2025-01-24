@@ -11,7 +11,7 @@ body {
     overflow: hidden;
     margin: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
 }
 
 .main {
@@ -101,10 +101,10 @@ h1 {
     font-size: 0.9rem;
 }
 
-.search-bar input::placeholder{
+.search-bar input::placeholder {
     position: absolute;
     left: 52%;
-    font-size: 1rem; 
+    font-size: 1rem;
 }
 
 
@@ -136,13 +136,11 @@ h3 {
 }
 
 
-
-
 /*  --------------------------------------------  Content      -------------------------------------------------------------------------- */
 
 .content {
     position: relative;
-    height: 80%;
+    height: 100%;
     width: 100%;
     display: flex;
     padding-right: 20px;
@@ -223,15 +221,13 @@ h4 {
 
 
 .albums {
-    height: 101%;
+    height: 80%;
     position: relative;
     padding: 2rem;
     width: 79vw;
     width: 100%;
     padding-right: 10vw;
     padding-left: 0.3rem;
-    overflow: scroll;
-    scrollbar-width: none;
     -ms-overflow-style: none;
     overflow-x: hidden;
 }
@@ -251,7 +247,6 @@ h4 {
 }
 
 .container {
-    width: 103%;
     display: flex;
     position: relative;
     align-items: center;
@@ -261,7 +256,7 @@ h4 {
 .row {
     display: flex;
     width: 96%;
-    overflow-x: auto;
+    overflow-x: scroll;
     margin-bottom: 1rem;
     padding-left: 1rem;
     box-sizing: border-box;
@@ -284,12 +279,12 @@ h4 {
     left: -1rem;
     font-size: 0.8rem;
     cursor: pointer;
-    opacity: 0;
     transition: 0.3s;
     background-color: #F6F6F6;
     border-radius: 50%;
     padding: 1rem;
     z-index: 1;
+    opacity: 0;
 }
 
 .container:hover .fa-greater-than {
@@ -413,6 +408,8 @@ h6 {
 /* -----------------------------------------------------------------------   player    ----------------------------------------------------------------------- */
 
 .player {
+    display: flex;
+    flex-direction: column;
     bottom: 0px;
     height: 5.5rem;
     position: absolute;
@@ -430,6 +427,7 @@ h6 {
     height: 0.3rem;
     outline: none;
     cursor: pointer;
+    z-index: 10;
 }
 
 
@@ -446,7 +444,7 @@ input[type="range"]::-webkit-slider-thumb {
     display: none;
 }
 
-input[type="range"]:hover::-webkit-slider-thumb{
+input[type="range"]:hover::-webkit-slider-thumb {
     display: block;
 }
 
@@ -471,7 +469,6 @@ input[type="range"]::-ms-thumb {
 
 .controls-container {
     display: flex;
-    bottom: 0px;
     height: 4.5rem;
 }
 
@@ -530,6 +527,7 @@ input[type="range"]::-ms-thumb {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 2rem;
 }
 
 .playback audio {
@@ -553,7 +551,9 @@ input[type="range"]::-ms-thumb {
 .play-pause-button:hover {
     color: #676767;
 }
-.fa-backward-step , .fa-forward-step{
+
+.fa-backward-step,
+.fa-forward-step {
     color: #8a8a8a;
 }
 
@@ -569,8 +569,8 @@ input[type="range"]::-ms-thumb {
     justify-content: flex-end;
 }
 
-.control-system{
-    width:30%;
+.control-system {
+    width: 30%;
     height: 40%;
     font-size: 1.4rem;
     display: flex;
@@ -578,10 +578,15 @@ input[type="range"]::-ms-thumb {
     align-items: center;
 }
 
-.duration p{
-    font-family: 'Noto Sans', Courier, monospace;;
+.duration p {
+    font-family: 'Noto Sans', Courier, monospace;
+    ;
     font-size: 1rem;
     color: #676767;
+}
+
+.mobile-options{
+    display: none;
 }
 
 /* --------------------------------------------  media query   -------------------------------------------------------------------------- */
@@ -664,6 +669,7 @@ input[type="range"]::-ms-thumb {
     .song-details p {
         width: 85%;
     }
+
     .search-bar i {
         position: absolute;
         left: 48%;
@@ -673,7 +679,121 @@ input[type="range"]::-ms-thumb {
     }
 }
 
+@media(max-width:970px) {
+    .song {
+        width: 32%;
+        padding-bottom: 0px;
+    }
+    .nav-options{
+        display: none;
+    }
+    .search-bar{
+        display: none;
+    }
+    .account{
+        width: 80%;
+    }
+    .left-nav-option {
+        width: 0vw;
+        min-width: max-content;
+    }
+    .sidebar{
+        display: none;
+    }
+    .queue{
+        display: none;
+    }
+    .fa-greater-than , .fa-less-than{
+        display: none !important;
+    }
+    .container{
+        padding: 0;
+        width: 96vw;
+        margin-bottom: 0px;
+    }
+    .row{
+        padding-left: 0px;
+    }
+    .fa-backward-step , .fa-forward-step{
+        display: none !important;
+    }
+    .options{
+        display: none;
+    }
+    .player{
+        height: 8rem;
+    }
+    .controls-container{
+        justify-content: space-between;
+        min-height: 4.4rem;
+        border-bottom: 1px solid rgb(173, 173, 173);
+    }
+    .song-details{
+        align-items: center;
+        text-align: center;
+        height: 4.2rem;
+        width: 65vw;
+        margin: auto;
+    }
+    .player-buttons{
+        width: fit-content;
+        margin: 0px;
+    }
+    .curr-song{
+        width: 100%;    
+        align-items: flex-start;
+        height: fit-content;
+    }    
+    .curr-song img{
+        height: 3.5rem;
+        margin-top: 0.3rem;
+    }
+    .playback{
+        width: fit-content;
+        margin: 0 1rem 0 0;
+        margin-right: 1rem;
+    }
+    .play-pause-button{
+        font-size: 1.5rem;
+    }
+    .mobile-options{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        font-size: 1.2rem;
+        color: #626262;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .mobile-pro-option img{
+        filter: grayscale(100%) brightness(35%) contrast(140%);
+        height: 1.7rem;
+        margin-bottom: -4px;
+    }
+    .mobile-options div{
+        text-align: center;
+    }
+    .mobile-options div p{
+        margin: 0rem;
+        margin-top: 0.2rem;
+        font-size: 0.6rem;
+    }
+    .play-button{
+        display: none !important;
+    }
+}
 
+@media(max-width:500px){
+    .song{
+        width: 40%;
+    }
+    .song-details p{
+        font-size: 0.7rem;
+    }
+    .song-details h3{
+        font-size: 0.8rem;
+    }
+}
 
 @keyframes sidebar-closing {
     0% {

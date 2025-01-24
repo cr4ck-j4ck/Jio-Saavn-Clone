@@ -9,6 +9,7 @@ const audio = document.querySelector("audio");
 const playPauseButton = document.querySelector(".play-pause-button");
 const rangeInput = document.querySelector('input[type="range"]');
 const showDuration = document.querySelector(".duration p");
+const songDivs = document.querySelectorAll(".song");
 let audioTimeInMinAndSecond = audio.duration;
 
 async function getSongData() {
@@ -33,7 +34,7 @@ async function playSong(src) {
     songDetails.querySelector("p").innerText = songObj.songDetail;
     playPauseButton.innerHTML = `<i class="fa-solid fa-pause"></i>`;
     rangeInput.max = audio.duration;
-    audioTimeInMinAndSecond = `${parseInt(audio.duration / 60)}:${parseInt(audio.duration % 60).toString().length == 1 ? "0"+parseInt(audio.duration % 60) : parseInt(audio.duration % 60)}`;
+    audioTimeInMinAndSecond = `${parseInt(audio.duration / 60)}:${parseInt(audio.duration % 60).toString().length == 1 ? "0" + parseInt(audio.duration % 60) : parseInt(audio.duration % 60)}`;
     showDuration.innerText = `0:00 / ${audioTimeInMinAndSecond}`;
 }
 
@@ -45,7 +46,7 @@ for (let button of playButtons) {
 
 for (let button of leftButtons) {
     button.addEventListener("click", function () {
-        if (this.nextElementSibling.scrollLeft > 0) {
+        if ( this.nextElementSibling.scrollLeft > 0) {
             this.nextElementSibling.scrollTo({ left: 0, behavior: 'smooth' })
         }
     });
@@ -59,11 +60,19 @@ for (let button of rightButtons) {
     });
 }
 
+if (window.innerWidth <= 970) {
+    for (let songDiv of songDivs) {
+        songDiv.addEventListener("click",async function () {
+            await playSong(this.firstElementChild.src);
+        });
+    }
+}
+
 containers.forEach(container => {
     const row = container.querySelector(".row");
     const leftButton = container.querySelector(".fa-less-than");
     const rightButton = container.querySelector(".fa-greater-than");
-    
+
     container.addEventListener("mouseenter", function () {
         if (row.scrollLeft > 0) {
             leftButton.style.opacity = 1;
@@ -76,7 +85,7 @@ containers.forEach(container => {
             rightButton.style.opacity = 1;
         }
     });
-    
+
     container.addEventListener("mouseleave", function () {
         leftButton.style.opacity = 0;
         rightButton.style.opacity = 0;
@@ -112,11 +121,11 @@ playPauseButton.addEventListener("click", function () {
 
 audio.addEventListener("timeupdate", function () {
     rangeInput.value = audio.currentTime;
-    showDuration.innerText = `${parseInt(audio.currentTime / 60)}:${parseInt(audio.currentTime % 60).toString().length == 1 ? "0"+parseInt(audio.currentTime % 60) : parseInt(audio.currentTime % 60)} / ${audioTimeInMinAndSecond}`;
+    showDuration.innerText = `${parseInt(audio.currentTime / 60)}:${parseInt(audio.currentTime % 60).toString().length == 1 ? "0" + parseInt(audio.currentTime % 60) : parseInt(audio.currentTime % 60)} / ${audioTimeInMinAndSecond}`;
     const songPercent = parseInt((audio.currentTime / audio.duration) * 100);
 
     rangeInput.style.background = `linear-gradient(to right, #2BC5B4 0%, #2BC5B4 ${songPercent}%, #ddd ${songPercent}%,#ddd 100%)`;
-    
+
     if (audio.currentTime === audio.duration) {
         rangeInput.value = 0;
         rangeInput.style.background = `linear-gradient(to right, #2BC5B4 0%, #2BC5B4 0%, #ddd 0%,#ddd 100%)`;
