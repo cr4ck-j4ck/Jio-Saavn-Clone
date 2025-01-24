@@ -1,0 +1,243 @@
+.main {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
+
+
+.content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding-right: 20px;
+}
+
+
+.box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    min-width: 100%;
+    padding-left: 1.5rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+h4 {
+    color: #828DA8;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 2rem;
+}
+
+.box a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.700);
+    line-height: 1.8rem;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    width: 90%;
+    padding-left: 1rem;
+    font-family: 'Noto Sans', Courier, monospace;
+}
+
+.box i {
+    margin-right: 0.4rem;
+    font-size: 1.2rem;
+}
+
+.box a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.myPlayLists {
+    width: 100%;
+}
+
+.myPlayLists a:hover {
+    background-color: #2A2D36;
+    border-radius: 6px;
+    color: whitesmoke;
+}
+
+.play-list-button button {
+    padding: 0.8rem 1rem;
+    margin-left: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid #2BC5B4;
+    color: #2BC5B4;
+    transition: 0.2s;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.play-list-button button i {
+    margin-right: 6px;
+    font-weight: 400;
+}
+
+.play-list-button button:hover {
+    color: #258F83;
+    border: 1px solid #258F83;
+
+}
+
+/* ----------------------------------------------- Main Screen ---------------------------------------------- */
+
+
+.albums {
+    height: 80%;
+    position: relative;
+    padding: 2rem;
+    width: 79vw;
+    width: 100%;
+    padding-right: 10vw;
+    padding-left: 0.3rem;
+    -ms-overflow-style: none;
+    overflow-x: hidden;
+}
+
+.albums h1 {
+    font-size: 1.6em;
+    color: #3E3E3E;
+    font-weight: 600;
+    line-height: 2px;
+    margin-left: 1.5rem;
+}
+
+.albums h3 {
+    color: #3E3E3E;
+    margin-bottom: 1rem;
+    margin-left: 1.5rem;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin: 0 0rem 1rem 0.3rem;
+}
+
+.row {
+    display: flex;
+    width: 96%;
+    overflow-x: scroll;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    box-sizing: border-box;
+}
+
+.row::-webkit-scrollbar {
+    display: none;
+}
+.fa-greater-than {
+    position: absolute;
+    right: 1rem;
+    top: 34%;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.fa-less-than {
+    position: absolute;
+    margin-right: 1rem;
+    top: 27%;
+    left: -1rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #F6F6F6;
+    border-radius: 50%;
+    padding: 1rem;
+    z-index: 1;
+    opacity: 0;
+}
+
+.container:hover .fa-greater-than {
+    transform: translateX(10px);
+}
+
+.container:hover .fa-less-than {
+    transform: translateX(-10px);
+}
+
+.song {
+    width: calc(100% / 7);
+    flex-shrink: 0;
+    text-align: center;
+    padding: 0.7rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-right: 0.1rem;
+    position: relative;
+    height: 100%;
+}
+
+.song img {
+    min-width: 81px;
+    max-width: 100%;
+    border-radius: 5px;
+    max-height: 258px;
+    transition: 0.5s;
+}
+
+
+.song:hover>img {
+    filter: brightness(0.3);
+}
+
+.play-button {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    font-size: 1.2rem;
+    color: whitesmoke;
+    padding-top: 0.6rem;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    width: 45px;
+    height: 40px;
+    display: none;
+    padding-left: 3px;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.song:hover .play-button {
+    display: block;
+}
+
+.song:hover>.play-button {
+    display: block;
+}
+
+.song h6 {
+    font-weight: 600;
+    margin-top: 10px;
+    color: #1c1c1c;
+    font-size: 0.9rem;
+    font-family: 'Noto Sans', Courier, monospace;
+}
+
+.song p {
+    font-weight: 500;
+    color: #7f7f7f;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: "Sour Gummy", serif;
+}
+
+.song p,
+h6 {
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

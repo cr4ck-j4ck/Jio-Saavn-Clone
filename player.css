@@ -1,0 +1,181 @@
+.player {
+    display: flex;
+    flex-direction: column;
+    bottom: 0px;
+    height: 5.5rem;
+    position: absolute;
+    background-color: #F6F6F6;
+    width: 100%;
+    z-index: 2;
+}
+
+.player input[type="range"] {
+    position: absolute;
+    top: -7px;
+    appearance: none;
+    left: -1px;
+    width: 100%;
+    height: 0.3rem;
+    outline: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+    outline: none;
+    position: relative;
+    left: -8px;
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #2BC5B4;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+    display: block;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #2BC5B4;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 15px;
+    height: 15px;
+    background: #2BC5B4;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------------------------------ Current Song -------------------------------------------------------------------- */
+
+.controls-container {
+    display: flex;
+    height: 4.5rem;
+}
+
+.curr-song {
+    width: 35%;
+    height: 125%;
+    box-sizing: border-box;
+    padding: 0.1rem 0;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.curr-song img {
+    height: 80%;
+    border-radius: 10px;
+}
+
+.song-details p {
+    width: 92%;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 0.2rem;
+    font-family: "Sour Gummy", serif;
+    color: #7f7f7f;
+}
+
+.song-details {
+    height: 100%;
+    box-sizing: border-box;
+    margin-left: 1rem;
+    padding-top: 0.5rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.song-details h3 {
+    margin: 0;
+    width: 90%;
+    font-size: 1rem;
+    font-family: "Playfair Display", serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ------------------------------------------------------------------------------ Pause Play button -------------------------------------------------------------------- */
+
+.playback {
+    width: 28%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.playback audio {
+    border: 2px solid;
+}
+
+.player-buttons {
+    width: 230px;
+    height: 120%;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+.play-pause-button {
+    cursor: pointer;
+}
+
+.play-pause-button:hover {
+    color: #676767;
+}
+
+.fa-backward-step,
+.fa-forward-step {
+    color: #8a8a8a;
+}
+
+/* ---------------------------------------------------------------------------------- Options -------------------------------------------------------------------- */
+
+.options {
+    width: 15%;
+    height: 122%;
+    display: flex;
+    position: absolute;
+    right: 3rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.control-system {
+    width: 30%;
+    height: 40%;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.duration p {
+    font-family: 'Noto Sans', Courier, monospace;
+    ;
+    font-size: 1rem;
+    color: #676767;
+}
+
+.mobile-options{
+    display: none;
+}
