@@ -133,6 +133,7 @@ h4 {
 .row::-webkit-scrollbar {
     display: none;
 }
+
 .fa-greater-than {
     position: absolute;
     right: 1rem;

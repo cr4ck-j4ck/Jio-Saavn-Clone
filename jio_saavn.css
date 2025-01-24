@@ -35,20 +35,6 @@ body {
 }
 
 
-/* --------------------------------------------  media query   -------------------------------------------------------------------------- */
-
-
-@media(max-width:500px){
-    .song{
-        width: 40%;
-    }
-    .song-details p{
-        font-size: 0.7rem;
-    }
-    .song-details h3{
-        font-size: 0.8rem;
-    }
-}
 
 @keyframes sidebar-closing {
     0% {
