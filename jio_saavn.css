@@ -15,17 +15,21 @@ body {
 }
 
 
-
 /* ---------------------------------------- Queue -------------------------------------------- */
 
 .queue {
     position: absolute;
-    right: -24rem;
+    right: 2rem;
     top: 2.4rem;
-    width: 30rem;
+    width: 25rem;
     height: 75vh;
     background-color: red;
     transition: 0.3s;
+    border-radius: 15px;
+    box-shadow: -1px 0px 10px rgb(108, 108, 108);
+    background: rgb(0,212,255);
+    background: linear-gradient(90deg, rgba(0,212,255,1) 22%, rgba(55,66,215,1) 78%);
+    display: none;
 }
 
 
@@ -34,6 +38,16 @@ body {
     right: 0rem;
 }
 
+.queue-head{
+    background-color: white;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid;
+    height: 1rem;
+    padding: 1rem 0.5rem;
+}
+.queue-head p{
+    margin: 0;
+}
 
 
 @keyframes sidebar-closing {
