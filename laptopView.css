@@ -1,0 +1,87 @@
+@media(min-width:1101px) {
+    .sidebar {
+        position: relative;
+        background-color: #F6F6F6;
+        min-width: 14rem;
+        height: 100%;
+        padding: 1rem 0rem 0 0;
+        overflow: auto;
+        z-index: 2;
+        animation: sidebar-opening 0.6s;
+        height: 100%;
+    }
+
+    .fa-greater-than {
+        right: 1%;
+    }
+
+    .play-button:hover {
+        height: 50px;
+        width: 60px;
+        padding-top: 0.7rem;
+
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width:1100px) {
+    .brand h1 {
+        display: none;
+    }
+
+    .left-nav-option {
+        justify-content: start;
+    }
+
+    .nav-options {
+        width: 60%;
+    }
+
+    .queue {
+        right: -25rem;
+    }
+
+    .sidebar {
+        background-color: #F6F6F6;
+        position: absolute;
+        z-index: 1;
+        left: -250px;
+        animation: sidebar-closing 0.8s;
+        height: 100%;
+    }
+
+    .fa-less-than {
+        left: 0px;
+    }
+
+    .play-button {
+        top: 40%;
+        width: 40px;
+        height: 35px;
+        font-size: 1rem;
+        padding-top: 0.6rem;
+        padding-left: 3px;
+    }
+
+    .play-button:hover {
+        height: 45px;
+        width: 55px;
+        padding-top: 1rem;
+    }
+
+    .fa-greater-than {
+        right: 2%;
+    }
+
+    .song-details p {
+        width: 85%;
+    }
+
+    .search-bar i {
+        position: absolute;
+        left: 48%;
+        top: 34%;
+        color: #888;
+        font-size: 0.9rem;
+    }
+}

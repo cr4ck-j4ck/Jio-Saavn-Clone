@@ -1,0 +1,103 @@
+@media(max-width:970px) {
+    .song {
+        width: 32%;
+        padding-bottom: 0px;
+    }
+    .nav-options{
+        display: none;
+    }
+    .search-bar{
+        display: none;
+    }
+    .account{
+        width: 80%;
+    }
+    .left-nav-option {
+        width: 0vw;
+        min-width: max-content;
+    }
+    .sidebar{
+        display: none;
+    }
+    .queue{
+        display: none;
+    }
+    .fa-greater-than , .fa-less-than{
+        display: none !important;
+    }
+    .container{
+        padding: 0;
+        width: 96vw;
+        margin-bottom: 0px;
+    }
+    .row{
+        padding-left: 0px;
+    }
+    .fa-backward-step , .fa-forward-step{
+        display: none !important;
+    }
+    .options{
+        display: none;
+    }
+    .player{
+        height: 8rem;
+    }
+    .controls-container{
+        justify-content: space-between;
+        min-height: 4.4rem;
+        border-bottom: 1px solid rgb(173, 173, 173);
+    }
+    .song-details{
+        align-items: center;
+        text-align: center;
+        height: 4.2rem;
+        width: 65vw;
+        margin: auto;
+    }
+    .player-buttons{
+        width: fit-content;
+        margin: 0px;
+    }
+    .curr-song{
+        width: 100%;    
+        align-items: flex-start;
+        height: fit-content;
+    }    
+    .curr-song img{
+        height: 3.5rem;
+        margin-top: 0.3rem;
+    }
+    .playback{
+        width: fit-content;
+        margin: 0 1rem 0 0;
+        margin-right: 1rem;
+    }
+    .play-pause-button{
+        font-size: 1.5rem;
+    }
+    .mobile-options{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        font-size: 1.2rem;
+        color: #626262;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .mobile-pro-option img{
+        filter: grayscale(100%) brightness(35%) contrast(140%);
+        height: 1.7rem;
+        margin-bottom: -4px;
+    }
+    .mobile-options div{
+        text-align: center;
+    }
+    .mobile-options div p{
+        margin: 0rem;
+        margin-top: 0.2rem;
+        font-size: 0.6rem;
+    }
+    .play-button{
+        display: none !important;
+    }
+}
