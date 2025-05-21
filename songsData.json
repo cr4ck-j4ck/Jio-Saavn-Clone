@@ -602,7 +602,37 @@
   {
     "songName": "Reminder",
     "songDetail": "Starboy  by The Weeknd",
-    "songImage": "https://c.saavncdn.com/372/Starboy-English-2016-500x500.jpg",
+    "songImage": "https://i.pinimg.com/736x/3a/7d/3c/3a7d3cbb269240a164c7d51712c868f2.jpg",
     "songURL": "https://aac.saavncdn.com/372/2d22028e95d06cf831e083eb6fb2fe9c_160.mp4"
+  },
+  {
+    "songName": "São Paulo",
+    "songDetail": "Hurry Up Tomorrow",
+    "songImage": "https://i.pinimg.com/736x/bb/af/b4/bbafb475f9eb1bb94149f4da6ba204cd.jpg",
+    "songURL": "https://aac.saavncdn.com/627/430684e3c6fe623aa399e89f3d8d74c5_160.mp4"
+  },
+  {
+    "songName": "Timeless",
+    "songDetail": "Hurry Up Tomorrow  by The Weeknd, Playboi Carti",
+    "songImage": "https://i.pinimg.com/736x/ae/2c/96/ae2c9655d6ab85ee1c451f71d6abbc78.jpg",
+    "songURL": "https://aac.saavncdn.com/627/0e59f9099096f2e21dd28b5dfb33c2a8_160.mp4"
+  },
+  {
+    "songName": "Die For You",
+    "songDetail": "Starboy  by The Weeknd",
+    "songImage": "https://i.pinimg.com/736x/ff/a2/6c/ffa26cb901e1b8d090acbabedba2d367.jpg",
+    "songURL": "https://aac.saavncdn.com/372/a5712158e6c2a723b60fc9bf76ea173b_160.mp4"
+  },
+  {
+    "songName": "Call Out My Name",
+    "songDetail": "My Dear Melancholy,  by The Weeknd",
+    "songImage": "https://i.pinimg.com/736x/52/9c/77/529c7738417ef3826fcc727148f90407.jpg",
+    "songURL": "https://aac.saavncdn.com/994/b15acc064165dbb858526ec6b26f34a8_160.mp4"
+  },
+  {
+    "songName": "I Was Never There",
+    "songDetail": "My Dear Melancholy,  by The Weeknd, Gesaffelstein",
+    "songImage": "https://i.pinimg.com/736x/b4/ed/23/b4ed23c5ee23d990b9cdce68f733732d.jpg",
+    "songURL": "https://aac.saavncdn.com/994/c4fba5577e5cfed4ffa8de62cc3d295f_160.mp4"
   }
 ]
